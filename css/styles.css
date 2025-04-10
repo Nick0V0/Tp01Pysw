@@ -1,0 +1,356 @@
+/* Elimina márgenes y rellenos por defecto del navegador y aplica box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== ESTILO GENERAL ========== */
+body {
+  font-family: Arial, sans-serif;
+  /* Fuente base */
+  line-height: 1.6;
+  /* Espaciado entre líneas */
+  background-color: #f4f4f4;
+  /* Color de fondo claro */
+  color: #333;
+  /* Color de texto principal */
+}
+
+/* ========== HEADER Y NAVEGACIÓN ========== */
+header {
+  background-color: #111;
+  /* Fondo oscuro para el header */
+  color: #fff;
+  /* Texto blanco */
+  padding: 1rem;
+  /* Espaciado interno */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav .menu {
+  list-style: none;
+  /* Quita los puntos de la lista */
+  display: flex;
+  /* Menú horizontal */
+}
+
+nav .menu li {
+  position: relative;
+  /* Necesario para posicionar el submenú */
+  margin-right: 1rem;
+  /* Espacio entre ítems */
+}
+
+nav .menu a {
+  text-decoration: none;
+  /* Sin subrayado */
+  color: #fff;
+  padding: 0.5rem;
+  display: block;
+}
+
+/* Submenú oculto por defecto */
+nav .submenu ul {
+  position: absolute;
+  top: 100%;
+  /* Justo debajo del botón principal */
+  left: 0;
+  background: #222;
+  display: none;
+  list-style: none;
+  padding: 0.5rem;
+  z-index: 1;
+}
+
+/* Muestra el submenú al pasar el mouse */
+nav .submenu:hover ul {
+  display: block;
+}
+
+/* ========== HERO (video de fondo + texto) ========== */
+.hero {
+  position: relative;
+  height: 70vh;
+  /* Ocupa toda la altura de la ventana */
+  overflow: hidden;
+}
+
+.fondo-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ajusta el video sin deformarse */
+  z-index: 0;
+}
+
+.overlay {
+  color: white;
+  text-align: center;
+  padding-top: 30vh;
+  /* Baja el texto al centro visual */
+}
+
+.anim-texto {
+  font-size: 2.5rem;
+  animation: aparecer 2s forwards;
+}
+
+/* Animación para el texto en la sección Hero */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== CLASES DESTACADAS ========== */
+.clases {
+  padding: 1rem;
+  text-align: center;
+}
+
+.tarjetas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.card {
+  background: #d5d5d5;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* ========== CONTADOR ANIMADO ========== */
+.contador {
+  background-color: #222;
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.numero::before {
+  content: "0+";
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: inline-block;
+  animation: contar 1.5s forwards;
+}
+
+/* Simula el conteo de forma secuencial */
+@keyframes contar {
+  0% {
+    content: "0+";
+  }
+
+  5% {
+    content: "10+";
+  }
+
+  10% {
+    content: "30+";
+  }
+
+  15% {
+    content: "55+";
+  }
+
+  20% {
+    content: "85+";
+  }
+
+  25% {
+    content: "120+";
+  }
+
+  30% {
+    content: "160+";
+  }
+
+  35% {
+    content: "200+";
+  }
+
+  40% {
+    content: "240+";
+  }
+
+  45% {
+    content: "280+";
+  }
+
+  50% {
+    content: "310+";
+  }
+
+  55% {
+    content: "340+";
+  }
+
+  60% {
+    content: "370+";
+  }
+
+  65% {
+    content: "395+";
+  }
+
+  70% {
+    content: "420+";
+  }
+
+  75% {
+    content: "440+";
+  }
+
+  80% {
+    content: "460+";
+  }
+
+  85% {
+    content: "475+";
+  }
+
+  90% {
+    content: "485+";
+  }
+
+  95% {
+    content: "495+";
+  }
+
+  100% {
+    content: "500+";
+  }
+}
+
+
+/* ========== TESTIMONIOS (carrusel) ========== */
+.testimonial-carousel {
+  width: 300px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.testimonial-track {
+  display: flex;
+  width: 100%;
+  animation: scrollTestimonials 9s infinite;
+}
+
+.testimonial {
+  flex: 0 0 100%;
+  padding: 20px;
+  background: #f5f5f5;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+@keyframes scrollTestimonials {
+
+  0%,
+  10% {
+    transform: translateX(0);
+  }
+
+  33.33%,
+  43.33% {
+    transform: translateX(-100%);
+  }
+
+  66.66%,
+  76.66% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: #111;
+  color: #fff;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+
+footer h3 {
+  margin-bottom: 1rem;
+}
+
+.newsletter input {
+  padding: 0.5rem;
+  width: 70%;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.newsletter button {
+  padding: 0.5rem 1rem;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.redes a {
+  color: #fff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+}
