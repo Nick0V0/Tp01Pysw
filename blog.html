@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- Logo del gimnasio -->
+            <div class="logo">FitLife</div>
+
+            <!-- Menú principal de navegación -->
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+
+                <!-- Submenú desplegable para Clases -->
+                <li class="submenu">
+                    <a href="clases.html">Clases</a>
+                    <ul>
+                        <li><a href="#">Yoga</a></li>
+                        <li><a href="#">Crossfit</a></li>
+                        <li><a href="#">Funcional</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="entrenadores.html">Entrenadores</a></li>
+                <li><a href="formulario.html">Contacto</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Blog de Fitness</h1>
+
+    <!-- Filtros -->
+    <input type="radio" name="filter" id="all" checked>
+    <input type="radio" name="filter" id="nutrition">
+    <input type="radio" name="filter" id="training">
+
+    <div class="filters">
+        <label for="all">Todos</label>
+        <label for="nutrition">Nutrición</label>
+        <label for="training">Entrenamiento</label>
+    </div>
+
+    <!-- Posts -->
+    <section class="posts">
+        <article class="post featured nutrition">
+            <h2>Dieta balanceada: lo que debes saber</h2>
+            <p>Consejos prácticos sobre cómo mantener una dieta saludable sin dejar de disfrutar.</p>
+        </article>
+
+        <article class="post training">
+            <h2>Rutina HIIT para quemar grasa</h2>
+            <p>Entrenamiento intenso de solo 20 minutos. ¡Ideal si no tenés mucho tiempo!</p>
+        </article>
+
+        <article class="post nutrition">
+            <h2>Suplementos: ¿cuáles realmente funcionan?</h2>
+            <p>Analizamos los más comunes y cuáles tienen respaldo científico.</p>
+        </article>
+
+        <article class="post training">
+            <h2>Errores comunes al entrenar en el gimnasio</h2>
+            <p>Evitalos para aprovechar al máximo cada sesión.</p>
+        </article>
+    </section>
+
+    <!-- Comentarios -->
+    <section class="comments">
+        <h3>Comentarios</h3>
+        <div class="comment">
+            <div class="avatar"></div>
+            <div class="text">
+                <h4>Luis</h4>
+                <p>Muy buenos tips, gracias por compartir.</p>
+            </div>
+        </div>
+        <div class="comment">
+            <div class="avatar"></div>
+            <div class="text">
+                <h4>Martina</h4>
+                <p>Me encantó el artículo sobre suplementos.</p>
+            </div>
+        </div>
+    </section>
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <!-- Formulario para suscribirse al newsletter -->
+        <div class="newsletter">
+            <h3>Suscribite a nuestro newsletter</h3>
+            <form>
+                <input type="email" placeholder="Tu email">
+                <button type="submit">Suscribirme</button>
+            </form>
+        </div>
+
+        <!-- Enlaces a redes sociales -->
+        <div class="redes">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+        </div>
+
+        <!-- Mapa interactivo embebido -->
+        <div class="mapa">
+            <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-58.4209,-34.6037,-58.4200,-34.6027&layer=mapnik">
+            </iframe>
+        </div>
+    </footer>
+    <!-- Scroll Reveal con JavaScript -->
+    <script>
+        const posts = document.querySelectorAll('.post');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        posts.forEach(post => observer.observe(post));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/clases.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <!-- Logo del gimnasio -->
+      <div class="logo">FitLife</div>
+
+      <!-- Menú principal de navegación -->
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+
+        <!-- Submenú desplegable para Clases -->
+        <li class="submenu">
+          <a href="clases.html">Clases</a>
+          <ul>
+            <li><a href="#">Yoga</a></li>
+            <li><a href="#">Crossfit</a></li>
+            <li><a href="#">Funcional</a></li>
+          </ul>
+        </li>
+
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>  
+  </header>
+  <!-- Filtros -->
+  <section class="filtros">
+    <input type="radio" name="categoria" id="todos" checked>
+    <label for="todos">Todos</label>
+
+    <input type="radio" name="categoria" id="musculacion">
+    <label for="musculacion">Musculación</label>
+
+    <input type="radio" name="categoria" id="crossfit">
+    <label for="crossfit">CrossFit</label>
+
+    <input type="radio" name="categoria" id="yoga">
+    <label for="yoga">Yoga</label>
+
+    <input type="radio" name="categoria" id="spinning">
+    <label for="spinning">Spinning</label>
+
+
+    <!-- Galería tipo masonry -->
+    <div class="galeria">
+      <div class="clase musculacion">
+        <img src="images/imagen1.jpg" alt="Musculación">
+        <div class="overlay">
+          <h3>Musculación</h3>
+          <p>Entrenamiento de fuerza y resistencia.</p>
+        </div>
+      </div>
+      <div class="clase crossfit">
+        <img src="images/imagen2.jpg" alt="CrossFit">
+        <div class="overlay">
+          <h3>CrossFit</h3>
+          <p>Alta intensidad y trabajo funcional.</p>
+        </div>
+      </div>
+      <div class="clase yoga">
+        <img src="images/imagen3.jpg" alt="Yoga">
+        <div class="overlay">
+          <h3>Yoga</h3>
+          <p>Flexibilidad, concentración y paz mental.</p>
+        </div>
+      </div>
+      <!-- Más tarjetas según necesites -->
+      <div class="clase musculacion">
+        <img src="images/imagen1.jpg" alt="Musculación">
+        <div class="overlay">
+          <h3>Musculación</h3>
+          <p>Entrenamiento de fuerza y resistencia.</p>
+        </div>
+      </div>
+      <div class="clase crossfit">
+        <img src="images/imagen2.jpg" alt="CrossFit">
+        <div class="overlay">
+          <h3>CrossFit</h3>
+          <p>Alta intensidad y trabajo funcional.</p>
+        </div>
+      </div>
+      <div class="clase yoga">
+        <img src="images/imagen3.jpg" alt="Yoga">
+        <div class="overlay">
+          <h3>Yoga</h3>
+          <p>Flexibilidad, concentración y paz mental.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabla de Horarios Semanales -->
+  <section class="schedule">
+    <h2>Horarios Semanales</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Día</th>
+          <th>9:00</th>
+          <th>12:00</th>
+          <th>18:00</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Lunes</td>
+          <td>Yoga</td>
+          <td>CrossFit</td>
+          <td>Spinning</td>
+        </tr>
+        <tr>
+          <td>Martes</td>
+          <td>Musculación</td>
+          <td>Yoga</td>
+          <td>CrossFit</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <!-- Formulario para suscribirse al newsletter -->
+    <div class="newsletter">
+      <h3>Suscribite a nuestro newsletter</h3>
+      <form>
+        <input type="email" placeholder="Tu email">
+        <button type="submit">Suscribirme</button>
+      </form>
+    </div>
+    <!-- Enlaces a redes sociales -->
+    <div class="redes">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">TikTok</a>
+    </div>
+    <!-- Mapa interactivo embebido -->
+    <div class="mapa">
+      <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-58.4209,-34.6037,-58.4200,-34.6027&layer=mapnik">
+      </iframe>
+    </div>
+  </footer>
+</body>
+
+</html>
