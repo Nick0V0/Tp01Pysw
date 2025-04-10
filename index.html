@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <!-- Logo del gimnasio -->
+      <div class="logo">FitLife</div>
+
+      <!-- Menú principal de navegación -->
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+
+        <!-- Submenú desplegable para Clases -->
+        <li class="submenu">
+          <a href="clases.html">Clases</a>
+          <ul>
+            <li><a href="#">Yoga</a></li>
+            <li><a href="#">Crossfit</a></li>
+            <li><a href="#">Funcional</a></li>
+          </ul>
+        </li>
+
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <!-- Video de fondo motivacional -->
+    <video autoplay muted loop class="fondo-video">
+      <source src="images/Video para tu fondo de pantalla.mp4" type="video/mp4">
+    </video>
+
+    <!-- Texto animado sobre el video -->
+    <div class="overlay">
+      <h1 class="anim-texto">¡Entrená con nosotros!</h1>
+    </div>
+  </section>
+
+  <!-- ============ CLASES DESTACADAS ============ -->
+  <section class="clases">
+    <h2>Nuestras Clases</h2>
+
+    <!-- Tarjetas con clases destacadas -->
+    <div class="tarjetas">
+      <!-- Cada tarjeta representa una clase -->
+      <article class="card">
+        <img src="assets/img/yoga.jpg" alt="Clase de Yoga">
+        <h3>Yoga</h3>
+      </article>
+
+      <article class="card">
+        <img src="assets/img/crossfit.jpg" alt="Clase de Crossfit">
+        <h3>Crossfit</h3>
+      </article>
+
+      <article class="card">
+        <img src="assets/img/funcional.jpg" alt="Funcional">
+        <h3>Funcional</h3>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ CONTADOR ANIMADO ============ -->
+  <section class="contador">
+    <!-- Número animado con keyframes -->
+    <h2><span class="numero"></span> Socios Satisfechos</h2>
+  </section>
+
+  <!-- ============ TESTIMONIOS EN CARRUSEL ============ -->
+  <div class="testimonial-carousel">
+    <div class="testimonial-track">
+      <div class="testimonial">
+        <p>"Este gimnasio me cambió la vida. ¡Súper recomendado!"</p>
+        <h4>- Juan Pérez</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Entrenadores profesionales y ambiente motivador."</p>
+        <h4>- María Gómez</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Las rutinas son muy completas. Estoy feliz con mi progreso."</p>
+        <h4>- Lucas Rodríguez</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <!-- Formulario para suscribirse al newsletter -->
+    <div class="newsletter">
+      <h3>Suscribite a nuestro newsletter</h3>
+      <form>
+        <input type="email" placeholder="Tu email">
+        <button type="submit">Suscribirme</button>
+      </form>
+    </div>
+
+    <!-- Enlaces a redes sociales -->
+    <div class="redes">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">TikTok</a>
+    </div>
+
+    <!-- Mapa interactivo embebido -->
+    <div class="mapa">
+      <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-58.4209,-34.6037,-58.4200,-34.6027&layer=mapnik">
+      </iframe>
+    </div>
+  </footer>
+</body>
+
+</html>
