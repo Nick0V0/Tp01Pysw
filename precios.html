@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/precios.css">
+</head>
+
+<body>
+  <!-- ===== Botón Modo Oscuro ===== -->
+  <div class="modo-oscuro-container">
+    <button id="toggle-dark">🌙 Modo Oscuro</button>
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <nav>
+      <!-- Logo -->
+      <div class="logo">ImpulseGym</div>
+
+      <!-- Menú de navegación principal -->
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="submenu">
+          <a href="clases.html">Clases</a>
+          <ul>
+            <li><a href="#">Yoga</a></li>
+            <li><a href="#">Crossfit</a></li>
+            <li><a href="#">Funcional</a></li>
+          </ul>
+        </li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+        <li><a href="precios.html">Planes</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contenedor">
+    <h1>Planes de Membresía</h1>
+
+    <!-- Toggle con label asociado -->
+    <input type="checkbox" id="toggle-plan" hidden />
+    <div class="toggle-precios">
+      <label for="toggle-plan" class="switch">
+        <span class="slider"></span>
+      </label>
+      <span class="etiqueta">Mensual / Anual</span>
+    </div>
+
+    <!-- Contenedor que depende del toggle -->
+    <div class="tabla-precios ">
+      <div class="columna">
+        <h2>Básico</h2>
+        <p class="precio" data-mensual="$20" data-anual="$200"></p>
+        <ul>
+          <li><span class="tooltip">Acceso al gimnasio <span class="tip">Incluye acceso ilimitado</span></span></li>
+          <li><span class="tooltip">1 clase grupal <span class="tip">Zumba, funcional, etc.</span></span></li>
+          <li><span class="tooltip">Sin entrenador <span class="tip">Solo asistencia general</span></span></li>
+        </ul>
+        <a href="#" class="btn">Elegir</a>
+      </div>
+
+      <div class="columna destacada">
+        <h2>Pro</h2>
+        <p class="precio" data-mensual="$35" data-anual="$350"></p>
+        <ul>
+          <li><span class="tooltip">Acceso completo <span class="tip">Zona de pesas y clases</span></span></li>
+          <li><span class="tooltip">3 clases semanales <span class="tip">HIIT, funcional, yoga</span></span></li>
+          <li><span class="tooltip">1 entrenador mensual <span class="tip">Seguimiento básico</span></span></li>
+        </ul>
+        <a href="#" class="btn">Elegir</a>
+      </div>
+
+      <div class="columna">
+        <h2>Elite</h2>
+        <p class="precio" data-mensual="$50" data-anual="$500"></p>
+        <ul>
+          <li><span class="tooltip">Acceso VIP <span class="tip">Con SPA y áreas exclusivas</span></span></li>
+          <li><span class="tooltip">Clases ilimitadas <span class="tip">Todos los horarios</span></span></li>
+          <li><span class="tooltip">Entrenador personal <span class="tip">4 sesiones/mes</span></span></li>
+        </ul>
+        <a href="#" class="btn">Elegir</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ========== FOOTER CON MAPA, NEWSLETTER Y REDES ========== -->
+  <footer>
+    <div class="newsletter">
+      <h3>¡Recibí tips y novedades fitness en tu correo!</h3>
+      <form>
+        <input type="email" placeholder="Ingresá tu email" />
+        <button type="submit">Suscribirme</button>
+      </form>
+    </div>
+
+    <div class="redes">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">TikTok</a>
+    </div>
+
+    <div class="mapa">
+      <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-58.4209,-34.6037,-58.4200,-34.6027&layer=mapnik">
+      </iframe>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPT MODO OSCURO ========== -->
+  <script>
+    const toggle = document.getElementById('toggle-dark');
+    const body = document.body;
+
+    if (localStorage.getItem('dark-mode') === 'true') {
+      body.classList.add('dark-mode');
+      toggle.textContent = '☀️ Modo Claro';
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      localStorage.setItem('dark-mode', isDark);
+      toggle.textContent = isDark ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+    });
+  </script>
+</body>
+
+
+</html>

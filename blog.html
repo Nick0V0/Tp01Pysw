@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+
+<body>
+    <!-- ===== Botón Modo Oscuro ===== -->
+    <div class="modo-oscuro-container">
+        <button id="toggle-dark">🌙 Modo Oscuro</button>
+    </div>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <nav>
+            <!-- Logo -->
+            <div class="logo">ImpulseGym</div>
+
+            <!-- Menú de navegación principal -->
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="submenu">
+                    <a href="clases.html">Clases</a>
+                    <ul>
+                        <li><a href="#">Yoga</a></li>
+                        <li><a href="#">Crossfit</a></li>
+                        <li><a href="#">Funcional</a></li>
+                    </ul>
+                </li>
+                <li><a href="entrenadores.html">Entrenadores</a></li>
+                <li><a href="formulario.html">Contacto</a></li>
+                <li><a href="precios.html">Planes</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Blog de Fitness</h1>
+
+    <!-- Filtros -->
+    <input type="radio" name="filter" id="all" checked>
+    <input type="radio" name="filter" id="nutrition">
+    <input type="radio" name="filter" id="training">
+
+    <div class="filters">
+        <label for="all">Todos</label>
+        <label for="nutrition">Nutrición</label>
+        <label for="training">Entrenamiento</label>
+    </div>
+
+    <!-- Posts -->
+    <section class="posts">
+
+        <!-- Destacados de Nutrición -->
+        <article class="post featured nutrition">
+            <img src="images/dieta.jpg" alt="Dieta balanceada" class="post-img">
+            <h2>Dieta balanceada: lo que debes saber</h2>
+            <p>Consejos prácticos para mantener una alimentación equilibrada sin dejar de disfrutar tus comidas
+                favoritas.</p>
+        </article>
+
+        <article class="post featured nutrition">
+            <img src="images/hidratacion.jpg" alt="Hidratación en el deporte" class="post-img">
+            <h2>La importancia de la hidratación en el rendimiento deportivo</h2>
+            <p>Descubrí cuánta agua necesitás según tu nivel de actividad y cómo evitar la deshidratación.</p>
+        </article>
+
+        <!-- Nutrición -->
+        <article class="post nutrition">
+            <img src="images/snacks.jpg" alt="Snacks saludables" class="post-img">
+            <h2>Snacks saludables para cualquier momento del día</h2>
+            <p>Ideas fáciles y rápidas para mantener tu energía sin recurrir a productos ultraprocesados.</p>
+        </article>
+
+        <!-- Destacados de Entrenamiento -->
+        <article class="post training featured">
+            <img src="images/errores.jpg" alt="Errores al entrenar" class="post-img">
+            <h2>Errores comunes al entrenar en el gimnasio</h2>
+            <p>Evitalos para prevenir lesiones y sacar el máximo provecho a cada sesión.</p>
+        </article>
+
+        <article class="post nutrition">
+            <img src="images/suplementos.jpg" alt="Suplementos deportivos" class="post-img">
+            <h2>Suplementos: ¿cuáles realmente funcionan?</h2>
+            <p>Un repaso por los más populares como creatina, proteínas y BCAA con respaldo científico.</p>
+        </article>
+
+        <!-- Entrenamiento -->
+        <article class="post training">
+            <img src="images/hiit.jpg" alt="Rutina HIIT" class="post-img">
+            <h2>Rutina HIIT para quemar grasa</h2>
+            <p>Entrenamiento de alta intensidad en solo 20 minutos. Perfecto si tenés poco tiempo y querés resultados
+                rápidos.</p>
+        </article>
+
+        <article class="post training">
+            <img src="images/flexibilidad.jpg" alt="Rutina de flexibilidad" class="post-img">
+            <h2>Estiramientos y movilidad: claves para evitar lesiones</h2>
+            <p>Sumá estos ejercicios a tu rutina diaria para mejorar tu rendimiento y acelerar la recuperación.</p>
+        </article>
+
+    </section>
+
+
+
+    <!-- Comentarios -->
+    <section class="comments">
+        <h3>Comentarios</h3>
+        <div class="comment">
+            <div class="avatar"></div>
+            <div class="text">
+                <h4>Luis</h4>
+                <p>Muy buenos tips, gracias por compartir.</p>
+            </div>
+        </div>
+        <div class="comment">
+            <div class="avatar"></div>
+            <div class="text">
+                <h4>Martina</h4>
+                <p>Me encantó el artículo sobre suplementos.</p>
+            </div>
+        </div>
+    </section>
+    <!-- ========== FOOTER CON MAPA, NEWSLETTER Y REDES ========== -->
+    <footer>
+        <div class="newsletter">
+            <h3>¡Recibí tips y novedades fitness en tu correo!</h3>
+            <form>
+                <input type="email" placeholder="Ingresá tu email" />
+                <button type="submit">Suscribirme</button>
+            </form>
+        </div>
+
+        <div class="redes">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+        </div>
+
+        <div class="mapa">
+            <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-58.4209,-34.6037,-58.4200,-34.6027&layer=mapnik">
+            </iframe>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPT MODO OSCURO ========== -->
+    <script>
+        const posts = document.querySelectorAll('.post');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        posts.forEach(post => observer.observe(post));
+        const toggle = document.getElementById('toggle-dark');
+        const body = document.body;
+
+        // Cargar estado guardado al iniciar
+        if (localStorage.getItem('dark-mode') === 'true') {
+            body.classList.add('dark-mode');
+            toggle.textContent = '☀️ Modo Claro';
+        }
+
+        // Alternar modo oscuro y guardar preferencia
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('dark-mode', isDark);
+            toggle.textContent = isDark ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+        });
+    </script>
+</body>
+
+</html>

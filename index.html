@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitLife | Tu gimnasio ideal</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- ===== Botón Modo Oscuro ===== -->
+  <div class="modo-oscuro-container">
+    <button id="toggle-dark">🌙 Modo Oscuro</button>
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <nav>
+      <!-- Logo -->
+      <div class="logo">ImpulseGym</div>
+
+      <!-- Menú de navegación -->
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="submenu">
+          <a href="clases.html">Clases</a>
+          <ul>
+            <li><a href="#">Yoga</a></li>
+            <li><a href="#">Crossfit</a></li>
+            <li><a href="#">Funcional</a></li>
+          </ul>
+        </li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+        <li><a href="precios.html">Planes</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <video autoplay muted loop class="fondo-video">
+      <source src="images/Motivación [GYM].mp4" type="video/mp4" />
+    </video>
+    <div class="overlay">
+      <h1 class="anim-texto">¡Entrená con energía, viví con pasión!</h1>
+    </div>
+  </section>
+
+  <!-- ========== CLASES DESTACADAS ========== -->
+  <section class="clases">
+    <h2>Descubrí nuestras clases destacadas</h2>
+    <div class="tarjetas">
+      <article class="card">
+        <img src="images/yoga.jpg" alt="Clase de Yoga" />
+        <h3>Yoga</h3>
+        <p>Conectá cuerpo y mente en un ambiente de calma. Mejorá tu flexibilidad, respiración y bienestar general.</p>
+      </article>
+
+      <article class="card">
+        <img src="images/crossfit.jpg" alt="Clase de Crossfit" />
+        <h3>Crossfit</h3>
+        <p>Entrenamiento intenso que combina fuerza y resistencia. ¡Ideal para superar tus límites cada día!</p>
+      </article>
+
+      <article class="card">
+        <img src="images/funcional.jpg" alt="Clase Funcional" />
+        <h3>Funcional</h3>
+        <p>Ejercicios dinámicos para todo el cuerpo, pensados para mejorar tu rendimiento y movilidad diaria.</p>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- ========== CONTADOR ========== -->
+  <section class="contador">
+    <h2><span class="numero"></span> Personas ya confiaron en nosotros</h2>
+  </section>
+
+  <!-- ========== TESTIMONIOS ========== -->
+  <div class="testimonial-carousel">
+    <div class="testimonial-track">
+      <div class="testimonial">
+        <p>"Entrenar en FitLife fue la mejor decisión. ¡Increíble ambiente y resultados reales!"</p>
+        <h4>- Juan Pérez</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Los entrenadores son muy profesionales y siempre te motivan a dar lo mejor."</p>
+        <h4>- María Gómez</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Cada clase es diferente, dinámica y efectiva. Estoy feliz con mi progreso."</p>
+        <h4>- Lucas Rodríguez</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER CON MAPA, NEWSLETTER Y REDES ========== -->
+  <footer>
+    <div class="newsletter">
+      <h3>¡Recibí tips y novedades fitness en tu correo!</h3>
+      <form>
+        <input type="email" placeholder="Ingresá tu email" />
+        <button type="submit">Suscribirme</button>
+      </form>
+    </div>
+
+    <div class="redes">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">TikTok</a>
+    </div>
+
+    <div class="mapa">
+      <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-58.4209,-34.6037,-58.4200,-34.6027&layer=mapnik">
+      </iframe>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPT MODO OSCURO ========== -->
+  <script>
+    const toggle = document.getElementById('toggle-dark');
+    const body = document.body;
+
+    if (localStorage.getItem('dark-mode') === 'true') {
+      body.classList.add('dark-mode');
+      toggle.textContent = '☀️ Modo Claro';
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      localStorage.setItem('dark-mode', isDark);
+      toggle.textContent = isDark ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+    });
+  </script>
+</body>
+
+</html>
