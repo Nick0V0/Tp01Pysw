@@ -1,0 +1,143 @@
+/* ========== CONTENEDOR PRINCIPAL ========== */
+main {
+  margin: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========== FORMULARIO DE CONTACTO ========== */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 2px 100px rgba(73, 73, 73, 0.1);
+}
+
+/* ========== GRUPOS DE CAMPOS (LABEL + INPUT) ========== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* ========== CAMPOS DEL FORMULARIO ========== */
+input,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ========== BOTÓN DE ENVIAR ========== */
+button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+/* ========== VALIDACIÓN DE CAMPOS ========== */
+input:invalid,
+textarea:invalid {
+  border-color: #e74c3c;
+}
+
+input:valid,
+textarea:valid {
+  border-color: #2ecc71;
+}
+
+/* ========== SPINNER DE CARGA ========== */
+.spinner {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ddd;
+  border-top: 4px solid #f44336;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========== MODAL DE CONFIRMACIÓN ========== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 350px;
+  width: 90%;
+}
+
+.modal-content p {
+  margin-bottom: 15px;
+}
+
+/* ========== BOTÓN DE CIERRE DEL MODAL ========== */
+#close-modal {
+  background-color: #f44336;
+  /* corregido */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#close-modal:hover {
+  background-color: #d32f2f;
+}
+
+/* ========== DISEÑO RESPONSIVO (PANTALLAS +768px) ========== */
+@media (min-width: 768px) {
+  .contact-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-group {
+    grid-column: span 2;
+  }
+
+  textarea {
+    grid-column: span 2;
+  }
+}

@@ -1,0 +1,131 @@
+/* ========== FILTROS DE CATEGORÍAS ========== */
+.filtros {
+    padding: 2rem 0 5rem;
+    text-align: center;
+}
+
+.filtros input[type="radio"] {
+    display: none;
+    /* Oculta los botones de radio */
+}
+
+.filtros label {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.3rem;
+    background: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: rgb(0, 0, 0);
+}
+
+.filtros label:hover {
+    background: #333;
+    color: white;
+}
+
+/* Estilo cuando el filtro está activo */
+.filtros input:checked+label {
+    background: #333;
+    color: white;
+}
+
+/* Colores también aplicados en filtros específicos */
+.filtro-clases input[type="radio"]:checked+label {
+    background-color: #333;
+    color: white;
+}
+
+
+/* ========== GALERÍA MASONRY ========== */
+.galeria {
+    padding-top: 3rem;
+    display: grid;
+    width: 70%;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.7rem;
+}
+
+/* Tarjeta de clase */
+.clase {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagen de clase */
+.clase img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+    height: auto;
+}
+
+/* Sombra suave al hacer hover en la tarjeta */
+.xd {
+    transition: transform 0.3s ease;
+}
+
+.xd:hover {
+    z-index: 1;
+    box-shadow: 0 4px 100px rgba(88, 88, 88, 0.3);
+}
+
+/* Efecto zoom en imagen al pasar el mouse */
+.clase:hover img {
+    transform: scale(1.2);
+}
+
+/* ========== OVERLAY DE INFORMACIÓN EN HOVER ========== */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.clase:hover .overlay {
+    opacity: 1;
+}
+
+/* ========== FILTRADO SOLO CON CSS ========== */
+/* Oculta las clases que no correspondan al filtro activo */
+#musculacion:checked~.galeria .clase:not(.musculacion),
+#crossfit:checked~.galeria .clase:not(.crossfit),
+#yoga:checked~.galeria .clase:not(.yoga),
+#spinning:checked~.galeria .clase:not(.spinning) {
+    display: none;
+}
+
+
+/* ========== TABLA DE HORARIOS (RESPONSIVA) ========== */
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.schedule th,
+.schedule td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .schedule table {
+        font-size: 0.8rem;
+    }
+
+    .classes .card-container {
+        flex-direction: column;
+    }
+}

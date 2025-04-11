@@ -1,0 +1,132 @@
+/* ========== SECCIÓN DE ENTRENADORES ========== */
+.entrenadores {
+  text-align: center;
+  padding: 2rem;
+  background: #f2f2f2;
+  /* Fondo gris claro */
+}
+
+.contenedor-entrenadores {
+  padding: 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* ========== TARJETAS FLIP 3D ========== */
+.tarjeta {
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+  /* Efecto 3D */
+  position: relative;
+}
+
+.tarjeta .cara {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.8s ease;
+}
+
+.tarjeta:hover .cara-delantera {
+  transform: rotateY(180deg);
+}
+
+.tarjeta:hover .cara-trasera {
+  transform: rotateY(0deg);
+}
+
+/* ========== CARA DELANTERA (IMAGEN + NOMBRE) ========== */
+.cara-delantera {
+  background: white;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.cara-delantera img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.cara-delantera h3 {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+/* ========== CARA TRASERA (INFO + HABILIDADES) ========== */
+.cara-trasera {
+  background: #333;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 1rem;
+  z-index: 1;
+}
+
+/* ========== HABILIDADES CON BARRA ANIMADA ========== */
+.habilidades p {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 0.9rem;
+}
+
+.barra {
+  background: #444;
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.relleno {
+  height: 100%;
+  background: limegreen;
+  width: 0;
+  animation: cargar 8s forwards;
+  /* Carga progresiva */
+}
+
+/* Niveles personalizados por clase */
+.fuerza {
+  width: 90%;
+}
+
+.flexibilidad {
+  width: 80%;
+}
+
+@keyframes cargar {
+  from {
+    width: 0;
+  }
+}
+
+/* ========== SISTEMA DE RATING CON ESTRELLAS ========== */
+.rating {
+  display: inline-flex;
+  gap: 0.2rem;
+  font-size: 1.6rem;
+  color: gold;
+}
+
+.estrella {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: default;
+}
+
+.estrella:hover {
+  transform: scale(1.3);
+  filter: brightness(1.6);
+}
+
+.apagada {
+  color: #ccc;
+}
+
+.apagada:hover {
+  filter: brightness(1.2);
+}
